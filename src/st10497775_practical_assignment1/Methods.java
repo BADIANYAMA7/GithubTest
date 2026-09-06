@@ -4,6 +4,7 @@
  */
 package st10497775_practical_assignment1;
 
+import java.util.Random;
 import java.util.ArrayList;
 import java.util.Scanner;
 import static st10497775_practical_assignment1.ST10497775_Practical_Assignment1.input;
@@ -18,41 +19,64 @@ public class Methods {
     public static ArrayList<String> PatientName = new ArrayList<>();
     public static ArrayList<String> LastName = new ArrayList<>();
     public static ArrayList<Integer> Age_array = new ArrayList<>();
+    public static ArrayList<Integer> ID = new ArrayList<>();
     public static ArrayList<String> Gender_array = new ArrayList<>();
     public static ArrayList<String> Medical_Condition = new ArrayList<>();
+    Boolean[][] Bed_Management = new Boolean[4][5];
 
     public static void MenuChoices() {
         int choice = input.nextInt();
-        if (choice == 1) {
-            Menus.PatientMenu();
-            PatientOptions();
-        } else if (choice == 2) {
-            System.out.println("2");
-
-        } else if (choice == 3) {
-            System.out.println("3");
-        } else {
-            System.out.println("Please enter a number between 1-3");
-            Menus.Menu1();
-            choice = input.nextInt();
+        switch (choice) {
+            case 1:
+                Menus.PatientMenu();
+                PatientOptions();
+                break;
+            case 2:
+                System.out.println("2");
+                break;
+            case 3:
+                System.out.println("3");
+                break;
+            default:
+                System.out.println("Please enter a number between 1-3");
+                Menus.Menu1();
+                choice = input.nextInt();
+                break;
         }
 
     }
 
     public static void PatientOptions() {
         int patientoption = input.nextInt();
-        if (patientoption == 1) {
-            PatientOption1();
-        } else{
-        System.out.println("it failed");
-        
+        switch (patientoption) {
+            case 1:
+                PatientOption1();
+                break;
+            case 2:
+                PatientOption2();
+                break;
+            case 3:
+                PatientOption3();
+                break;
+            case 4:
+                PatientOption4();
+                break;
+            case 5:
+                PatientOption5();
+                break;
+            default:
+                System.out.println("Please Enter a number between 1-5");
+                break;
         }
 
     }
 
     public static void PatientOption1() {
+        Random Random = new Random();
         String Patient_Name, Last_Name, Gender, Condition;
         int Age;
+        int PatientId = Random.nextInt(9000) + 1000;
+        ID.add(PatientId);
         System.out.println("Please Enter Patient's Name");
         Patient_Name = input.next();
         PatientName.add(Patient_Name);
@@ -68,5 +92,58 @@ public class Methods {
         System.out.println("Please Enter Patient's Medical Condition");
         Condition = input.next();
         Medical_Condition.add(Condition);
+        System.out.println("Patient's ID number is" + " " + " " + PatientId);
+        System.out.println("\n==============================");
+        System.out.println("PATIENT REGISTERED SUCCESSFULLY!");
+        System.out.println("==============================");
+        System.out.println("");
+        Menus.PatientMenu();
+        PatientOptions();
+    }
+
+    public static void PatientOption2() {
+        int SearchID;
+        System.out.println("Please Enter the Patient's ID");
+        SearchID = input.nextInt();
+        int index = ID.indexOf(SearchID);
+    
+    if (index == -1) {
+
+        System.out.println("Patient not found!");
+        System.out.println("");
+        Menus.PatientMenu();
+        PatientOptions();
+
+    } else {
+
+        System.out.println("Patient Details");
+        System.out.println("==============================");
+        System.out.println("Patient Name: " + PatientName.get(index));
+        System.out.println("Patient LastName: " + LastName.get(index));
+        System.out.println("Patient Age: " + Age_array.get(index));
+        System.out.println("Patient's Gender: " + Gender_array.get(index));
+        System.out.println("Patient Medical condition: "+ Medical_Condition.get(index));
+        System.out.println("==============================");
+        Menus.PatientMenu();
+        PatientOptions();
+    }
+}
+
+    public static void PatientOption3() {
+        int SearchID;
+        System.out.println("");
+
+    }
+
+    public static void PatientOption4() {
+        int SearchID;
+        System.out.println("Please Enter the Patient's ID");
+
+    }
+
+    public static void PatientOption5() {
+        int SearchID;
+        Menus.Menu1();
+
     }
 }
