@@ -30,6 +30,7 @@ public class Menus {
         System.out.println("3.Update Patient Details");
         System.out.println("4.Delete Patient Details");
         System.out.println("5.Go back to Start Menu");
+        System.out.println("6.All Registered Patients");
         System.out.println("=============================");
     }
     

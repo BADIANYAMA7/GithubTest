@@ -64,8 +64,12 @@ public class Methods {
             case 5:
                 PatientOption5();
                 break;
+
+            case 6:
+                PatientOption6();
+                break;
             default:
-                System.out.println("Please Enter a number between 1-5");
+                System.out.println("Please Enter a number between 1-6");
                 break;
         }
 
@@ -106,28 +110,28 @@ public class Methods {
         System.out.println("Please Enter the Patient's ID");
         SearchID = input.nextInt();
         int index = ID.indexOf(SearchID);
-    
-    if (index == -1) {
 
-        System.out.println("Patient not found!");
-        System.out.println("");
-        Menus.PatientMenu();
-        PatientOptions();
+        if (index == -1) {
 
-    } else {
+            System.out.println("Patient not found!");
+            System.out.println("");
+            Menus.PatientMenu();
+            PatientOptions();
 
-        System.out.println("Patient Details");
-        System.out.println("==============================");
-        System.out.println("Patient Name: " + PatientName.get(index));
-        System.out.println("Patient LastName: " + LastName.get(index));
-        System.out.println("Patient Age: " + Age_array.get(index));
-        System.out.println("Patient's Gender: " + Gender_array.get(index));
-        System.out.println("Patient Medical condition: "+ Medical_Condition.get(index));
-        System.out.println("==============================");
-        Menus.PatientMenu();
-        PatientOptions();
+        } else {
+
+            System.out.println("Patient Details");
+            System.out.println("==============================");
+            System.out.println("Patient Name: " + PatientName.get(index));
+            System.out.println("Patient LastName: " + LastName.get(index));
+            System.out.println("Patient Age: " + Age_array.get(index));
+            System.out.println("Patient's Gender: " + Gender_array.get(index));
+            System.out.println("Patient Medical condition: " + Medical_Condition.get(index));
+            System.out.println("==============================");
+            Menus.PatientMenu();
+            PatientOptions();
+        }
     }
-}
 
     public static void PatientOption3() {
         int SearchID;
@@ -138,12 +142,36 @@ public class Methods {
     public static void PatientOption4() {
         int SearchID;
         System.out.println("Please Enter the Patient's ID");
+        SearchID = input.nextInt();
+        int index = ID.indexOf(SearchID);
 
+        if (index == -1) {
+
+            System.out.println("Patient not found!");
+            System.out.println("");
+            Menus.PatientMenu();
+            PatientOptions();
+
+        } else {
+            ID.remove(index);
+            PatientName.remove(index);
+            LastName.remove(index);
+            Age_array.remove(index);
+            Gender_array.remove(index);
+            Medical_Condition.remove(index);
+            System.out.println("Patients Record Has been Fully Deleted");
+            Menus.PatientMenu();
+            PatientOptions();
+        }
     }
 
     public static void PatientOption5() {
-        int SearchID;
         Menus.Menu1();
+        MenuChoices();
+
+    }
+
+    public static void PatientOption6() {
 
     }
 }
