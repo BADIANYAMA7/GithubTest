@@ -12,15 +12,13 @@ import java.util.Scanner;
  * @author hp
  */
 public class ST10497775_Practical_Assignment1 {
-
-    public static ArrayList<String> PatientName = new ArrayList<>();
-    public static ArrayList<String> LastName = new ArrayList<>();
-    public static ArrayList<Integer> Age = new ArrayList<>();
-    public static ArrayList<String> Gender = new ArrayList<>();
-    public static ArrayList<String> Medical = new ArrayList<>();
+    
+    public static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.println("Welcome To Medicare Hospital");
+        Menus.Menu1();
+        Methods.MenuChoices();
+
     }
 
 }
