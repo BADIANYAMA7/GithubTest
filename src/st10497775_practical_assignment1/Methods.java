@@ -172,6 +172,18 @@ public class Methods {
     }
 
     public static void PatientOption6() {
+        for (int i = 0; i < ID.size(); i++) {
+            System.out.println("Patient ID: " + ID.get(i));
+            System.out.println("Patient Name: " + PatientName.get(i));
+            System.out.println("Patient Last Name: " + LastName.get(i));
+            System.out.println("Patient Age: " + Age_array.get(i));
+            System.out.println("Patient Gender: " + Gender_array.get(i));
+            System.out.println("Medical Condition: " + Medical_Condition.get(i));
 
+            System.out.println("--------------------------------");
+
+        }
+        Menus.PatientMenu();
+        PatientOptions();
     }
 }
