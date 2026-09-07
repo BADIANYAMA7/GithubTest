@@ -13,6 +13,7 @@ import static st10497775_practical_assignment1.ST10497775_Practical_Assignment1.
  *
  * @author hp
  */
+
 public class Methods {
 
     public static Scanner input = new Scanner(System.in);
@@ -22,7 +23,14 @@ public class Methods {
     public static ArrayList<Integer> ID = new ArrayList<>();
     public static ArrayList<String> Gender_array = new ArrayList<>();
     public static ArrayList<String> Medical_Condition = new ArrayList<>();
-    Boolean[][] Bed_Management = new Boolean[4][5];
+    public static String[][] Bed_Management = {
+        {"B01"}, {"B02"}, {"B03"}, {"B04"},
+        {"B05"}, {"B06"}, {"B07"}, {"B08"},
+        {"B09"}, {"B10"}, {"B11"}, {"B12"},
+        {"B13"}, {"B14"}, {"B15"}, {"B16"},
+        {"B17"}, {"B18"}, {"B19"}, {"B20"}
+
+    };
 
     public static void MenuChoices() {
         int choice = input.nextInt();
@@ -32,15 +40,16 @@ public class Methods {
                 PatientOptions();
                 break;
             case 2:
-                System.out.println("2");
+                Menus.BedMangementMenu();
+                BedManagementOption();
                 break;
             case 3:
                 System.out.println("3");
                 break;
             default:
                 System.out.println("Please enter a number between 1-3");
-                Menus.Menu1();
-                choice = input.nextInt();
+                
+                
                 break;
         }
 
@@ -186,4 +195,71 @@ public class Methods {
         Menus.PatientMenu();
         PatientOptions();
     }
+
+    public static void BedManagementOption() {
+        int Bedoption = input.nextInt();
+        switch (Bedoption) {
+            case 1:
+                BedMangementOption1();
+                break;
+            case 2:
+                BedMangementOption2();
+                break;
+            case 3:
+                BedMangementOption3();
+                break;
+            case 4:
+                BedMangementOption4();
+                break;
+            default:
+                System.out.println("Please Enter a number between 1-4");
+                break;
+        }
+
+    }
+
+    public static void BedMangementOption1() {
+
+    }
+
+    public static void BedMangementOption2() {
+
+    }
+
+    public static void BedMangementOption3() {
+    for (int i=0 ;i < Bed_Management.length;i++){
+        for (int j = 0; j < Bed_Management[i].length; j++) {
+        System.out.println("Bed"+" "+Bed_Management[i][j])
+                
+                
+                ;
+    
+    }
+    }
+        
+    }
+
+    public static void BedMangementOption4() {
+
+    }
+
+    enum Patient_Category {
+        Inpatient,
+        Outpatient,
+        Emergency
+
+    }
+    
+    class Patient {
+    
+        
+        public void inpatient(){
+        
+        
+        }
+    
+    
+    }
+    
+
 }

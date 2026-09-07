@@ -34,5 +34,17 @@ public class Menus {
         System.out.println("=============================");
     }
     
+    public static void BedMangementMenu(){
+    System.out.println("Patient Menu");
+        System.out.println("=============================");
+        System.out.println("Choose the following Options");
+        System.out.println("1.Allocate Bed to a patient");
+        System.out.println("2.Discharged Patient");
+        System.out.println("3.Ward layout");
+        System.out.println("4.Go back to Start Menu");
+        System.out.println("=============================");
+    
+    }
+    
 }
 
